@@ -1,0 +1,39 @@
+{
+  "name": "@jroman00/node-metrics",
+  "version": "0.1.0",
+  "description": "Metrics library for Node.js applications",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "cover": "nyc npm run test && nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "cover-html": "nyc npm run test && nyc report --reporter=html",
+    "lint": "eslint . --format codeframe",
+    "lint-fix": "eslint --fix . --format codeframe",
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jroman00/node-metrics.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jroman00/node-metrics/issues"
+  },
+  "homepage": "https://github.com/jroman00/node-metrics#readme",
+  "dependencies": {
+    "hot-shots": "^6.1.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "codecov": "^3.2.0",
+    "eslint": "^5.15.2",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.1.2",
+    "nyc": "^13.3.0",
+    "sinon": "^7.2.7",
+    "sinon-chai": "^3.3.0"
+  }
+}
