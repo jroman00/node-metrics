@@ -140,13 +140,13 @@ A docker image has been set up so that you don't have to install node/npm locall
 To build the image:
 
 ```bash
-docker-compose build
+bash bin/local-init.sh
 ```
 
 To connect to a running instance:
 
 ```bash
-docker-compose run --rm node-metrics sh
+docker-compose run --rm node-metrics bash
 ```
 
 To run linting:

@@ -1,10 +1,11 @@
-FROM mhart/alpine-node:10.15.3
+FROM node:10.23.0-buster
 
 # Release version
 ENV APP_VERSION=0.1.0
 
 # Install packages
-RUN apk --update add \
+RUN apt-get update
+RUN apt-get install -y  \
   git
 
 # Copy package.json to temp folder
