@@ -23,3 +23,15 @@ start: ## Start containers and run the application
 .PHONY: stop
 stop: ## Stop containers and the application
 	bash ./bin/local-stop.sh
+
+.PHONY: lint
+lint: ## Run the lint suite
+	docker-compose run --rm node-metrics npm run lint
+
+.PHONY: lint-fix
+lint-fix: ## Run the lint suite fixer
+	docker-compose run --rm node-metrics npm run lint:fix
+
+.PHONY: test
+test: ## Run the test suite
+	docker-compose run --rm node-metrics npm run test

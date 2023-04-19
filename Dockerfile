@@ -1,4 +1,4 @@
-FROM node:10.23.0-buster
+FROM node:18.16.0-buster
 
 # Release version
 ENV APP_VERSION=0.1.0
@@ -16,7 +16,7 @@ RUN cd /tmp && npm ci
 
 # Set working directory and copy source
 WORKDIR /usr/src
-COPY . /usr/src
+COPY . .
 
 # Move compiled node modules back
 RUN mv /tmp/node_modules node_modules
