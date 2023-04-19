@@ -2,7 +2,7 @@ const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 
-const { metricsMiddleware } = require('../');
+const { metricsMiddleware } = require('..');
 const httpMetrics = require('../lib/metrics/httpMetrics');
 
 chai.use(sinonChai);
