@@ -1,32 +1,25 @@
 .DEFAULT_GOAL := help
 
-## help (default): Show the help docs
 .PHONY: help
-help:
-	@echo "Options:"
-	@sed -n 's|^##||p' ${PWD}/Makefile
+help: ## Show the help docs (DEFAULT)
+	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage: make COMMAND\n\nCommands: \033[36m\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
 
-## init: Initialize the local env, install dependencies, and build all containers
 .PHONY: init
-init:
+init: ## Initialize the local env, install dependencies, and build all containers
 	bash ./bin/local-init.sh
 
-## log: Tail container logs
 .PHONY: log
-log:
+log: ## Tail container logs
 	docker-compose logs -f node-metrics
 
-## shell: Start a shell session in a new container
 .PHONY: shell
-shell:
+shell: ## Start a shell session in a new container
 	docker-compose run --rm node-metrics bash
 
-## start: Start containers and run the application
 .PHONY: start
-start:
+start: ## Start containers and run the application
 	bash ./bin/local-start.sh
 
-## stop: Stop containers and the application
 .PHONY: stop
-stop:
+stop: ## Stop containers and the application
 	bash ./bin/local-stop.sh

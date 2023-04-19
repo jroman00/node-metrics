@@ -26,12 +26,12 @@
     "hot-shots": "^6.8.7"
   },
   "devDependencies": {
-    "chai": "^4.3.4",
+    "chai": "^4.3.7",
     "codecov": "^3.8.3",
-    "eslint": "^8.5.0",
+    "eslint": "^8.38.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.25.3",
-    "mocha": "^9.1.3",
+    "eslint-plugin-import": "^2.27.5",
+    "mocha": "^9.2.2",
     "nyc": "^15.1.0",
     "sinon": "^7.2.7",
     "sinon-chai": "^3.7.0"
