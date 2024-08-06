@@ -146,19 +146,19 @@ bash bin/local-init.sh
 To connect to a running instance:
 
 ```bash
-docker-compose run --rm node-metrics bash
+docker compose run --rm node-metrics bash
 ```
 
 To run linting:
 
 ```bash
-docker-compose run --rm node-metrics npm run lint
+docker compose run --rm node-metrics npm run lint
 ```
 
 To run the test suite:
 
 ```bash
-docker-compose run --rm node-metrics npm run test
+docker compose run --rm node-metrics npm run test
 ```
 
 ## Available configuration variables

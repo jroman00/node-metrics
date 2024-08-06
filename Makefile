@@ -10,11 +10,11 @@ init: ## Initialize the local env, install dependencies, and build all container
 
 .PHONY: log
 log: ## Tail container logs
-	docker-compose logs -f node-metrics
+	docker compose logs -f node-metrics
 
 .PHONY: shell
 shell: ## Start a shell session in a new container
-	docker-compose run --rm node-metrics bash
+	docker compose run --rm node-metrics bash
 
 .PHONY: start
 start: ## Start containers and run the application
@@ -26,12 +26,12 @@ stop: ## Stop containers and the application
 
 .PHONY: lint
 lint: ## Run the lint suite
-	docker-compose run --rm node-metrics npm run lint
+	docker compose run --rm node-metrics npm run lint
 
 .PHONY: lint-fix
 lint-fix: ## Run the lint suite fixer
-	docker-compose run --rm node-metrics npm run lint:fix
+	docker compose run --rm node-metrics npm run lint:fix
 
 .PHONY: test
 test: ## Run the test suite
-	docker-compose run --rm node-metrics npm run test
+	docker compose run --rm node-metrics npm run test

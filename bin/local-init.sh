@@ -17,12 +17,12 @@ main() {
     cd $APP_ROOT
 
     # Build docker images
-    echo "Building docker images with docker-compose..."
-    docker-compose build
+    echo "Building docker images with docker compose..."
+    docker compose build
 
     # Install node dependencies
     echo "Installing dependencies..."
-    docker-compose run --rm node-metrics npm ci
+    docker compose run --rm node-metrics npm ci
   )
 
   echo "node-metrics repo setup successfully!"

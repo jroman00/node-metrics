@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   node-metrics:
     container_name: node-metrics
